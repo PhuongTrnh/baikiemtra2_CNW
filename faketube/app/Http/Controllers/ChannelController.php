@@ -44,7 +44,7 @@ class ChannelController extends Controller
         $channel->URL = $request->URL;
 
         $channel->save();
-        return redirect()->route('index')->with('success', 'Channel added successfully.');
+        return redirect()->route('channels.index')->with('success', 'Channel added successfully.');
     }
 
     /**

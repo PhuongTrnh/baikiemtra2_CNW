@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Create Category')
+@section('title', 'Create Channel')
 
 @section('content')
 
@@ -19,16 +19,34 @@
 @endif
 
 <div class="card">
-    <div class="card-header">Add Category</div>
+    <div class="card-header">Add Channel</div>
     <div class="card-body">
-        <form method="post" action="{{ route('categories.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('channels.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="row mb-3">
-                <label class="col-sm-2 col-label-form">Category Name</label>
+                <label class="col-sm-2 col-label-form">Channel Name</label>
                 <div class="col-sm-10">
                     <input type="text" name="name" class="form-control" />
                 </div>
             </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-label-form">Description</label>
+                <div class="col-sm-10">
+                    <textarea name="description" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-label-form">Subscribers Count</label>
+                <div class="col-sm-10">
+                    <input type="number" name="subscribersCount" class="form-control" />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-label-form">URL</label>
+                <div class="col-sm-10">
+                    <input type="text" name="URL" class="form-control" />
+                </div>
+            </div>        
             <div class="text-center">
                 <input type="submit" class="btn btn-primary" value="Add" />
             </div>
